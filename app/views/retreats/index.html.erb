@@ -1,0 +1,11 @@
+<div class="row">
+  <h2>Upcoming Retreats:</h2>
+  <% @retreats.each do |retreat| %>
+  <div class="col-md-4" id="retreats">
+    <p><%=retreat.title%></p>
+    <%=link_to "Learn More", retreat_path(retreat), class: "btn btn-primary", role: "button"%>
+    <p><%=retreat.description.truncate_words(20)%></p>
+    <p><%=retreat.address%></p>
+  </div>
+  <%end%>
+</div>

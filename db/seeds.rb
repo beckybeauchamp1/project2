@@ -19,25 +19,23 @@ Photo.destroy_all
 
 charlotte = Instructor.create!(firstname: "Charlotte", lastname: "Healy", type_of_yoga_practice: "Vinyasa", city: "Washington", state: "District of Columbia", description: "The word “vinyasa” can be translated as “arranging something in a special way,” like yoga poses for example.
 In vinyasa yoga classes, students coordinate movement with breath to flow from one pose to the next. Ashtanga, Baptiste Yoga, Jivamukti, Power Yoga, and Prana Flow could all be considered vinyasa yoga. Vinyasa is also the term used to describe a ​specific ​sequence of poses
-(Chaturanga to Upward-Facing Dog to Downward-Facing Dog​)​ commonly used throughout a vinyasa class​.", photo_url: "charlotte.jpg", facebook_url: "#", email: "charlotte@gmail.com", password: "topsecret", password_confirmation: "topsecret")
+(Chaturanga to Upward-Facing Dog to Downward-Facing Dog​)​ commonly used throughout a vinyasa class​.", photo_url: "charlotte.jpg", facebook_url: "#", email: "charlotte@gmail.com")
 
-maria = Instructor.create!(firstname: "Maria", lastname: "Fortino", type_of_yoga_practice: "Vinyasa", city: "Washington", state: "District of Columbia", photo_url: "maria.jpg", facebook_url: "#", email: "maria@gmail.com", password: "topsecret",
-password_confirmation: "topsecret", description: "The word “vinyasa” can be translated as “arranging something in a special way,” like yoga poses for example. In vinyasa yoga classes, students coordinate movement with breath to flow from one pose to the next. Ashtanga, Baptiste Yoga, Jivamukti,
+maria = Instructor.create!(firstname: "Maria", lastname: "Fortino", type_of_yoga_practice: "Vinyasa", city: "Washington", state: "District of Columbia", photo_url: "maria.jpg", facebook_url: "#", email: "maria@gmail.com", description: "The word “vinyasa” can be translated as “arranging something in a special way,” like yoga poses for example. In vinyasa yoga classes, students coordinate movement with breath to flow from one pose to the next. Ashtanga, Baptiste Yoga, Jivamukti,
 Power Yoga, and Prana Flow could all be considered vinyasa yoga. Vinyasa is also the term used to describe a ​specific ​sequence of poses (Chaturanga to Upward-Facing Dog to Downward-Facing Dog​)​ commonly used throughout a vinyasa class​.")
 
 anna = Instructor.create!(firstname: "Anna", lastname: "Boeri", type_of_yoga_practice: "Hatha", city: "Santa Monica", state: "California", photo_url: "anna.jpg", facebook_url: "#",
 email: "anna@gmail.com", description: "The word hatha comes from the Sanskrit terms 'ha' meaning 'sun' and 'tha' meaning 'moon'. Thus, Hatha Yoga is known as the branch of Yoga that unites pairs of opposites referring to the positive (sun) and negative (moon) currents in the system.
 It concentrates on the third (Asana) and fourth (Pranayama) steps in the Eight Limbs of Yoga. Hatha Yoga tries to achieve balance between body and mind, as well as attempts to free the more subtle spiritual elements of the mind through physical poses or Asanas, Breathing Techniques.
-It is a great type of yoga to practice for Beginners!", password: "topsecret", password_confirmation: "topsecret")
+It is a great type of yoga to practice for Beginners!")
 
 becky = Instructor.create!(firstname: "Becky", lastname: "Beauchamp", type_of_yoga_practice: "Ashtanga", city: "Baltimore", state: "Maryland", photo_url: "becky.jpg", facebook_url: "#", email: "beckybeauchamp1@gmail.com",
 description: "With each action and every practice of Ashtanga Yoga, we leave a fingerprint in the universe. Together, all the yogis in the world create! an energetic pattern through their practice. Grab onto this gigantic energy field, and through your own Ashtanga Yoga practice let yourself live, breath for breath,
-Vinyasa for Vinyasa. Your mat becomes the bus stop and you climb into the Ashtanga Yoga bus. Your journey takes you directly into a state of physical, mental and spiritual well-being. This page can be your guide for the most exciting ride of your life, a map on your personal spiritual way.",
-password: "topsecret", password_confirmation: "topsecret")
+Vinyasa for Vinyasa. Your mat becomes the bus stop and you climb into the Ashtanga Yoga bus. Your journey takes you directly into a state of physical, mental and spiritual well-being. This page can be your guide for the most exciting ride of your life, a map on your personal spiritual way.")
 
 hailey= Instructor.create!(firstname: "Hailey", lastname: "Feinstein", type_of_yoga_practice: "Ashtanga", city: "Manhattan", state: "New York", photo_url: "hailey.jpg", facebook_url: "#",
 description: "The practice of Ashtanga Yoga (Ashtanga/Vinyasa Yoga) as established by Sri K. Pattabhi Jois of Mysore, India is a dynamic system that consists of a precise sequence of poses (asana), breath control (ujjayi pranayama), a gazing point (drishti), and internal energetic locks (bandhas). Each pose in the sequence is a preparation for the next, and is traditionally practiced in sequence.",
-email: "hailey@gmail.com", password: "topsecret", password_confirmation: "topsecret")
+email: "hailey@gmail.com")
 
 retreat1 = Retreat.create!(title: "Bali Retreat", description: "This retreat is located at Kura Kura Resort in Bali and is situated along a small river, a few steps away from the sea.
 It was originally built as a family house and in a way it still is. The family house was our starting place to build. The original rooms are old Java style houses and the new rooms are added in the same style.

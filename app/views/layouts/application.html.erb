@@ -1,14 +1,43 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>YogaRetreats</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <title>YogaRetreatsApp</title>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+  <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
+<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+<link href='https://fonts.googleapis.com/css?family=Quicksand' rel='stylesheet' type='text/css'>
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js" integrity="sha512-K1qjQ+NcF2TYO/eI3M6v8EiNYZfA95pQumfvcVrTHtwQVDG+aHRqLi/ETn2uB+1JqwYqVG3LIvdm9lj6imS/pQ==" crossorigin="anonymous"></script>
 </head>
 <body>
-
+    <form class="navbar-form navbar-left" role="button">
+    <%= link_to "HOME", '/', id: "logo" %>
+    </form>
+    <form class="navbar-form navbar-right" role="search">
+    <div class="form-group">
+      <input type="text" class="form-control" placeholder="Search">
+    </div>
+    <button type="submit" class="btn btn-default">Submit</button>
+  </form>
+  <nav>
+  <ul class="nav navbar-nav navbar-right">
+    <li><%= link_to "Lead a Retreat",'#' %></li>
+    <li><%= link_to "Instructors", instructors_path %></li>
+    <li><%= link_to "Retreats", '#' %></li>
+    <li><%= link_to "Sign Up", '#' %></li>
+    <li><%= link_to "About", '#' %></li>
+  </ul>
+</nav>
+<div class = "jumbotron">
 <%= yield %>
-
+</body>
+<script>
+		$(".col-md-6").on('click', function(){
+			$(this).toggleClass('show-description');
+		})
+	</script>
 </body>
 </html>

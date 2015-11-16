@@ -1,0 +1,21 @@
+<div class = "mainpage">
+  <h1>YOGA RETREAT<small></small></h1>
+  <p>Start one Today</p>
+  <p><%=link_to "Learn More", '#', class: "btn btn-primary btn-lg", role: "button"%></p>
+</div>
+<div class="row main">
+  <h2>Recent Retreats</h2>
+  <%@recent_retreats.each do |retreat|%>
+  <div class="col-md-4">
+      <div class="thumbnail">
+        <!-- <img src="#"> -->
+      <div class="caption">
+        <h3><%=retreat.title%></h3>
+        <p><%=retreat.description.truncate_words(10)%></p>
+        <p><%=retreat.address%></p>
+        <p><%=link_to 'More Details', retreats_path, class: "btn btn-primary", role: "button"%><%=link_to "Photos", "#", class: "btn btn-default", role: "button"%></p>
+      </div>
+      </div>
+    </div>
+    <%end%>
+</div>
