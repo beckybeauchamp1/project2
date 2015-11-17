@@ -1,7 +1,8 @@
 <div class="row">
   <h2>Upcoming Retreats:</h2>
+  <p><%= link_to "Start Your Own", new_retreat_path, class: "btn btn-primary",id: "newretreatlink", role: "button"%><p>
   <% @retreats.each do |retreat| %>
-  <div class="col-md-4" id="retreats">
+  <div class="col-md-4" id="retreatsindex">
     <p><%=retreat.title%></p>
     <%=link_to "Learn More", retreat_path(retreat), class: "btn btn-primary", role: "button"%>
     <p><%=retreat.description.truncate_words(20)%></p>

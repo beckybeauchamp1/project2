@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151116200102) do
+ActiveRecord::Schema.define(version: 20151116215411) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -51,13 +51,14 @@ ActiveRecord::Schema.define(version: 20151116200102) do
   add_index "photos", ["retreat_id"], name: "index_photos_on_retreat_id", using: :btree
 
   create_table "retreats", force: :cascade do |t|
-    t.string    "title"
-    t.string    "address"
-    t.string    "description"
-    t.daterange "date_range"
-    t.decimal   "cost",          precision: 8, scale: 2
-    t.integer   "user_id"
-    t.integer   "instructor_id"
+    t.string  "title"
+    t.string  "address"
+    t.string  "description"
+    t.decimal "cost",          precision: 8, scale: 2
+    t.integer "user_id"
+    t.integer "instructor_id"
+    t.date    "start_date"
+    t.date    "end_date"
   end
 
   add_index "retreats", ["instructor_id"], name: "index_retreats_on_instructor_id", using: :btree

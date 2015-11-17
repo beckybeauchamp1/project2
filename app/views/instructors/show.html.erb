@@ -1,0 +1,10 @@
+<div class="row" id="retreatshowpage">
+  <h2><%=@instructor.firstname%> <%=@instructor.lastname%></h2>
+  <div class="col-md-8 col-md-offset-2" id="retreats">
+    <!-- <p>Lead By: <a href="../instructors/<@retreat.instructor_id"><@retreat.instructor.firstname></a></p> -->
+    <%=link_to "Edit", edit_instructor_path(@instructor), class: "btn btn-primary", role: "button"%>
+    <p>Expertise: <%=@instructor.type_of_yoga_practice%></p>
+    <p><%=@instructor.description%></p>
+    <p>Location: <%=@instructor.city%>, <%=@instructor.state%></p>
+  </div>
+</div>

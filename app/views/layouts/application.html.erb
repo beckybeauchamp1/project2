@@ -5,16 +5,18 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
   <!-- Latest compiled and minified CSS -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
-<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-<link href='https://fonts.googleapis.com/css?family=Quicksand' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <link href='https://fonts.googleapis.com/css?family=Quicksand' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
 
-<!-- Latest compiled and minified JavaScript -->
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js" integrity="sha512-K1qjQ+NcF2TYO/eI3M6v8EiNYZfA95pQumfvcVrTHtwQVDG+aHRqLi/ETn2uB+1JqwYqVG3LIvdm9lj6imS/pQ==" crossorigin="anonymous"></script>
+  <!-- Latest compiled and minified JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js" integrity="sha512-K1qjQ+NcF2TYO/eI3M6v8EiNYZfA95pQumfvcVrTHtwQVDG+aHRqLi/ETn2uB+1JqwYqVG3LIvdm9lj6imS/pQ==" crossorigin="anonymous"></script>
 </head>
 <body>
     <form class="navbar-form navbar-left" role="button">
-    <%= link_to "HOME", '/', id: "logo" %>
+    <a href = "/" class= "home"><i class="fa fa-hand-peace-o"></i></a>
     </form>
     <form class="navbar-form navbar-right" role="search">
     <div class="form-group">
@@ -27,12 +29,26 @@
     <li><%= link_to "Lead a Retreat",'#' %></li>
     <li><%= link_to "Instructors", instructors_path %></li>
     <li><%= link_to "Retreats", '#' %></li>
-    <li><%= link_to "Sign Up", '#' %></li>
+    <% if user_signed_in? %>
+        <li><%=link_to "Log Out", destroy_user_session_path, method: :delete, class: 'nav'%></li>
+        <li><%=link_to "Edit Profile", edit_user_registration_path, method: :get, class: 'nav'%></li>
+      <% else %>
+        <li><%=link_to "Sign Up", user_session_path, method: :show, class: 'nav'%></li>
+      <%end%>
     <li><%= link_to "About", '#' %></li>
   </ul>
 </nav>
 <div class = "jumbotron">
+  <%= flash_messages %>
 <%= yield %>
+<footer>
+  <ul>
+    <li><i class="fa fa-facebook-official"></i></li>
+    <li><i class="fa fa-linkedin-square"></i></li>
+    <li><i class="fa fa-github-square"></i></li>
+    <li><i class="fa fa-envelope-o"></i></li>
+</ul>
+</footer>
 </body>
 <script>
 		$(".col-md-6").on('click', function(){

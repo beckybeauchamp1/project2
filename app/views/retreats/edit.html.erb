@@ -1,0 +1,6 @@
+<h2>EDIT RETREAT</h2>
+<%= render "form" %>
+
+<%= form_for @retreat, method: "delete", :html => {:class =>'form-new-retreat'}  do |f| %>
+<%= f.submit "Delete Post", class: "delete" %>
+<% end %>

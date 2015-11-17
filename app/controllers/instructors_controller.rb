@@ -7,7 +7,7 @@ class InstructorsController < ApplicationController
   end
 
   def show
-    @instructor = Instructor.find(params[:id])
+    
   end
 
   def new
@@ -31,7 +31,7 @@ class InstructorsController < ApplicationController
   end
 
   def set_post
-   @nstructor = Instructor.find(params[:id])
+   @instructor = Instructor.find(params[:id])
   end
 
 end
