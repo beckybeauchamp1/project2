@@ -8,7 +8,8 @@ class RetreatsController < ApplicationController
 
   def show
     @retreat = Retreat.find(params[:id])
-
+    @comments = Comment.all
+    @comment = Comment.new
   end
 
   def new

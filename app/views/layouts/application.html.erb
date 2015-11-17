@@ -9,10 +9,10 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <link href='https://fonts.googleapis.com/css?family=Quicksand' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Oxygen' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
-
-  <!-- Latest compiled and minified JavaScript -->
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js" integrity="sha512-K1qjQ+NcF2TYO/eI3M6v8EiNYZfA95pQumfvcVrTHtwQVDG+aHRqLi/ETn2uB+1JqwYqVG3LIvdm9lj6imS/pQ==" crossorigin="anonymous"></script>
+  <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
 </head>
 <body>
     <form class="navbar-form navbar-left" role="button">
@@ -26,9 +26,9 @@
   </form>
   <nav>
   <ul class="nav navbar-nav navbar-right">
-    <li><%= link_to "Lead a Retreat",'#' %></li>
+    <li><%= link_to "Lead a Retreat",new_retreat_path %></li>
     <li><%= link_to "Instructors", instructors_path %></li>
-    <li><%= link_to "Retreats", '#' %></li>
+    <li><%= link_to "Retreats", retreats_path %></li>
     <% if user_signed_in? %>
         <li><%=link_to "Log Out", destroy_user_session_path, method: :delete, class: 'nav'%></li>
         <li><%=link_to "Edit Profile", edit_user_registration_path, method: :get, class: 'nav'%></li>
@@ -41,6 +41,7 @@
 <div class = "jumbotron">
   <%= flash_messages %>
 <%= yield %>
+</div>
 <footer>
   <ul>
     <li><i class="fa fa-facebook-official"></i></li>
@@ -49,11 +50,5 @@
     <li><i class="fa fa-envelope-o"></i></li>
 </ul>
 </footer>
-</body>
-<script>
-		$(".col-md-6").on('click', function(){
-			$(this).toggleClass('show-description');
-		})
-	</script>
 </body>
 </html>

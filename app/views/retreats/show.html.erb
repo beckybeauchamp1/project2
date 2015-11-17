@@ -4,7 +4,28 @@
     <!-- <p>Lead By: <a href="../instructors/<@retreat.instructor_id"><@retreat.instructor.firstname></a></p> -->
     <p><%=@retreat.title%></p>
     <%=link_to "Edit", edit_retreat_path(@retreat), class: "btn btn-primary", role: "button"%>
+    <%=link_to "Photos", retreat_photos_path(@retreat, @photos), class: "btn btn-primary", role: "button"%>
     <p><%=@retreat.description%></p>
     <p><%=@retreat.address%></p>
+
+    <div class="media">
+      <i class="fa fa-commenting-o"></i>
+      <%@comments.each do |comment|%>
+      <div class="media-left">
+        <img class="media-object" src="<%=comment.user.photo_url%>" alt="...">
+      </div>
+      <div class="media-body">
+        <h4 class="media-heading"><%=comment.user.firstname%>, <%=comment.user.lastname%></h4>
+        <p><%=comment.text%><p>
+      </div>
+      <%end%>
+    </div>
+        <%= form_for [@retreat, @comment], :html => { :class =>
+        'form-new-comment' } do |f| %>
+        <%= f.label :text %>
+        <%= f.text_field :text %>
+        <%= f.submit :html => { :class =>
+        'btn btn-primary'}, role: "button"%>
+        <% end %>
   </div>
 </div>

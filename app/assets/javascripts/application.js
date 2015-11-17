@@ -11,6 +11,30 @@
 // about supported directives.
 //
 //= require jquery
+//= require jquery.turbolinks
 //= require jquery_ujs
+//= require bootstrap-sprockets
 //= require turbolinks
 //= require_tree .
+
+$( document ).ready(function() {
+
+  function showInstructorPhotoDescription(){
+    $(".col-md-6").on('click', function(){
+      $(".aboutinstructor").toggle();
+    });
+  }
+
+  function showPhotoDescription (){
+    $(".thumbnail").mouseover(function(){
+        $(this).find('#photocaption').slideDown(250);
+      });
+    $(".thumbnail").mouseleave(function(){
+          $(this).find('#photocaption').slideUp(250);
+    });
+  }
+
+  showInstructorPhotoDescription();
+  showPhotoDescription();
+
+});

@@ -60,9 +60,21 @@ retreat5 = Retreat.create!(title: "India Retreat", description: "Yoga and Medita
 Our open, spacious hall is surrounded by trees and greenery; it has been built for you to feel one with nature as you practice yoga and meditation. With trees and greenery surrounding you, the sound of birds to accompany your breath, flowers to fix your gaze or “dristi” upon and the sun to warm your face as you lie down in “savasana” – we feel that this hall brings positive energy to the yoga class. Practicing yoga or meditation in this space is sure to enhance your practice and take it to deeper levels.",
 address: "Bangalore,India")
 
-bali = Photo.create!(title: "Kura Kura Retreat Center", description: "This is the retreat center in Bali", photo_url: "http://www.therivertree.com/wordpress/wp-content/uploads/2013/01/20121027Gaia_Oasis_Mountains115-1024x682.jpg")
-costarica = Photo.create!(title: "Anamaya Resort", description: "This is the retreat center in Costa Rica", photo_url: "http://thecostaricanews.com/wp-content/uploads/2010/01/anamaya_costa_rica_1.jpg")
-colorado = Photo.create!(title: "Anamaya Resort", description: "This is the retreat center in Costa Rica", photo_url: "http://static1.squarespace.com/static/52d5b347e4b03a2f95867fb9/t/536ea515e4b0fff417406872/1399760161816/Mt+Princeton+Yoga+and+Hot+Springs+retreat?format=2500w")
+
+photo1 = Photo.create(title: "Bali", photo_url: "http://seekretreat.com/wp-content/uploads/2014/07/Soulshine-Dec2013-37-653x488.jpg", description: "Love this Place")
+photo2 = Photo.create(title: "Bali", photo_url: "http://media-cdn.tripadvisor.com/media/photo-s/06/f1/91/fe/blooming-lotus-yoga.jpg", description: "Love this Place")
+photo3 = Photo.create(title: "Colorado", photo_url: "http://www.citypictures.org/data/media/124/Autumn_Colors_Sneffels_Range_Colorado.jpg", description: "Love this Place")
+photo4 = Photo.create(title: "California", photo_url: "http://www.ranchovalencia.com/assets/images/masthead/interior/wellness-program.jpg", description: "Love this Place")
+photo5 = Photo.create(title: "Costa Rica", photo_url: "http://www.anamayaresort.com/wp-content/uploads/2012/11/Anamaya-yoga-deck-680px.jpg", description: "Love this Place")
+photo6 = Photo.create(title: "Costa Rica", photo_url: "http://seekretreat.com/wp-content/uploads/2013/03/pura-vida-2-653x418.png", description: "Love this Place")
+photo7 = Photo.create(title: "Colorado", photo_url: "http://crestoneretreats.org/wp-content/uploads/2010/10/130619_Dome_wide_angle.jpg", description: "Love this Place")
+photo8 = Photo.create(title: "India", photo_url: "http://www.swan-yoga-goa.com/wp-content/uploads/2015/06/21-1024x576.jpg", description: "Love this Place")
+photo9 = Photo.create(title: "India", photo_url: "http://blavity.blavity.netdna-cdn.com/wp-content/uploads/2015/05/India.jpg?057b6a", description: "Love this Place")
+photo10 = Photo.create(title: "Bali", photo_url: "http://media-cdn.tripadvisor.com/media/photo-o/02/30/60/8e/oneworld-retreats-kumara.jpg", description: "Love this Place")
+photo11= Photo.create(title: "California", photo_url: "http://www.ranchovalencia.com/assets/images/masthead/interior/resort-recreation.jpg", description: "Love this Place")
+photo12 = Photo.create!(title: "Kura Kura Retreat Center", description: "This is the retreat center in Bali", photo_url: "http://www.therivertree.com/wordpress/wp-content/uploads/2013/01/20121027Gaia_Oasis_Mountains115-1024x682.jpg")
+photo13 = Photo.create!(title: "Anamaya Resort", description: "This is the retreat center in Costa Rica", photo_url: "http://thecostaricanews.com/wp-content/uploads/2010/01/anamaya_costa_rica_1.jpg")
+
 
 
 retreat1.instructor = charlotte
@@ -76,9 +88,28 @@ retreat4.save
 retreat5.instructor= hailey
 retreat5.save
 
-bali.retreat= retreat1
-bali.save
-costarica.retreat= retreat2
-costarica.save
-colorado.retreat= retreat3
-colorado.save
+photo1.retreat = retreat1
+photo1.save
+photo2.retreat = retreat1
+photo2.save
+photo3.retreat = retreat3
+photo3.save
+photo4.retreat = retreat4
+photo5.retreat = retreat2
+photo5.save
+photo6.retreat = retreat2
+photo6.save
+photo7.retreat = retreat3
+photo7.save
+photo8.retreat = retreat5
+photo8.save
+photo9.retreat = retreat5
+photo9.save
+photo10.retreat = retreat1
+photo10.save
+photo11.retreat = retreat4
+photo11.save
+photo12.retreat = retreat1
+photo12.save
+photo13.retreat = retreat2
+photo13.save
