@@ -52,7 +52,6 @@ div.row.main {
 div.col-md-8{
   line-height: 40px;
   height: 800px;
-  overflow: scroll;
   background-color: white;
 }
 div.col-md-8 a{
@@ -139,6 +138,7 @@ h2{
  border: 2px solid black;
  background-color: white;
  color: black;
+ overflow: scroll;
 }
 #retreatsindex {
   margin-top: 40px;
@@ -153,9 +153,16 @@ h2{
 }
 .media {
   background-color: rgba(0, 0, 0, 0.1);
+  overflow: visible;
 }
 .media-body {
   color: black;
+  background-color: rgba(255, 255, 255, 0.6);
+  box-shadow: 10px 10px 5px #888888;
+  border: 1px solid white;
+  width: 80%;
+  text-align: left;
+  display: block;
 }
 .media-left {
 }
@@ -205,16 +212,16 @@ h2{
 }
 .form-new-comment{
   margin: 0 auto;
-  font-size: 23px;
+  font-size: 15px;
   font-weight: bold;
   text-align: center;
-  margin-top: 10px;
+  margin-top: 5px;
   display: block;
 }
 .form-new-comment input {
   display: block;
   margin: 0 auto;
-  margin-top: 20px;
+  margin-top: 5px;
 }
 input#comment_text{
  color: black;
@@ -241,10 +248,10 @@ input#comment_text{
    font-size: 90px;
  }
  .fa:hover {
-   background-color: rgba(0, 0, 0, 0.6);
+   background-color: rgba(0, 0, 0, 0.3);
  }
  footer {
-   margin-top: 100px;
+   margin-top: 200px;
    font-size: 60px;
    list-style-type: none;
    display: inline;
@@ -267,7 +274,7 @@ input#comment_text{
 
  .thumbnail {
    position:relative;
-   overflow:hidden;
+   overflow: hidden;
 }
 
 #photocaption {

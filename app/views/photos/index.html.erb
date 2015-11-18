@@ -7,8 +7,10 @@
           <div class="caption" id = "photocaption">
             <h4><%=photo.title%></h4>
             <p><%=photo.description.truncate_words(5)%></p>
-            <p><a href="#" class="label label-danger" rel="tooltip" title="Expand">Expand</a>
-            <a href="#" class="label label-default" rel="tooltip" title="Edit">Edit</a></p>
+            <p>
+            <%=link_to "Edit", edit_retreat_photo_path(photo, @retreat), class: "label label-default", rel: "tooltip", title:"Edit"%>
+            <%=link_to "Delete", class: "label label-default", rel: "tooltip", title:"Edit"%>
+           </p>
           </div>
             <img class= "img-responsive" src="<%=photo.photo_url%>" alt="...">
       </div>
