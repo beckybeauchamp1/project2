@@ -1,5 +1,11 @@
 source 'https://rubygems.org'
 
+gem "carrierwave"
+
+gem 'fog'
+
+gem 'figaro'
+
 gem 'jquery-turbolinks'
 
 gem "font-awesome-rails"

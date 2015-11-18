@@ -5,4 +5,5 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
    has_many :retreats
    has_many :instructors, through: :retreats
+   mount_uploader:image, ImageUploader
 end

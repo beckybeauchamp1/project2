@@ -24,7 +24,7 @@ In vinyasa yoga classes, students coordinate movement with breath to flow from o
 maria = Instructor.create!(firstname: "Maria", lastname: "Fortino", type_of_yoga_practice: "Vinyasa", city: "Washington", state: "District of Columbia", photo_url: "maria.jpg", facebook_url: "#", email: "maria@gmail.com", description: "The word “vinyasa” can be translated as “arranging something in a special way,” like yoga poses for example. In vinyasa yoga classes, students coordinate movement with breath to flow from one pose to the next. Ashtanga, Baptiste Yoga, Jivamukti,
 Power Yoga, and Prana Flow could all be considered vinyasa yoga. Vinyasa is also the term used to describe a ​specific ​sequence of poses (Chaturanga to Upward-Facing Dog to Downward-Facing Dog​)​ commonly used throughout a vinyasa class​.")
 
-matt = Instructor.create!(firstname: "Matt", lastname: "Boeri", type_of_yoga_practice: "Hatha", city: "Santa Monica", state: "California", photo_url: "anna.jpg", facebook_url: "#",
+anna = Instructor.create!(firstname: "Anna", lastname: "Boeri", type_of_yoga_practice: "Hatha", city: "Santa Monica", state: "California", photo_url: "anna.jpg", facebook_url: "#",
 email: "anna@gmail.com", description: "The word hatha comes from the Sanskrit terms 'ha' meaning 'sun' and 'tha' meaning 'moon'. Thus, Hatha Yoga is known as the branch of Yoga that unites pairs of opposites referring to the positive (sun) and negative (moon) currents in the system.
 It concentrates on the third (Asana) and fourth (Pranayama) steps in the Eight Limbs of Yoga. Hatha Yoga tries to achieve balance between body and mind, as well as attempts to free the more subtle spiritual elements of the mind through physical poses or Asanas, Breathing Techniques.
 It is a great type of yoga to practice for Beginners!")
@@ -74,14 +74,14 @@ photo10 = Photo.create(title: "Bali", photo_url: "http://media-cdn.tripadvisor.c
 photo11= Photo.create(title: "California", photo_url: "http://www.ranchovalencia.com/assets/images/masthead/interior/resort-recreation.jpg", description: "Love this Place")
 photo12 = Photo.create!(title: "Kura Kura Retreat Center", description: "This is the retreat center in Bali", photo_url: "http://www.therivertree.com/wordpress/wp-content/uploads/2013/01/20121027Gaia_Oasis_Mountains115-1024x682.jpg")
 photo13 = Photo.create!(title: "Anamaya Resort", description: "This is the retreat center in Costa Rica", photo_url: "http://thecostaricanews.com/wp-content/uploads/2010/01/anamaya_costa_rica_1.jpg")
-
+photo14 = Photo.create!(title: "Anamaya Resort", description: "This is the retreat center in Costa Rica", photo_url: "http://static1.squarespace.com/static/52d5b347e4b03a2f95867fb9/t/536ea515e4b0fff417406872/1399760161816/Mt+Princeton+Yoga+and+Hot+Springs+retreat?format=2500w")
 
 
 retreat1.instructor = charlotte
 retreat1.save
 retreat2.instructor = maria
 retreat2.save
-retreat3.instructor= matt
+retreat3.instructor= anna
 retreat3.save
 retreat4.instructor= becky
 retreat4.save
@@ -111,5 +111,3 @@ photo11.retreat = retreat4
 photo11.save
 photo12.retreat = retreat1
 photo12.save
-photo13.retreat = retreat2
-photo13.save

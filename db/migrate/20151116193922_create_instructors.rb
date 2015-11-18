@@ -9,7 +9,7 @@ class CreateInstructors < ActiveRecord::Migration
       t.string :photo_url
       t.string :description
       t.string :facebook_url
-      t.string :email,       null: false, default: ""
+      t.string :email
       t.timestamps null: false
     end
   end

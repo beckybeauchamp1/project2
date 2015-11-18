@@ -10,24 +10,25 @@ class InstructorsController < ApplicationController
     @retreats = @instructor.retreats
   end
 
-  def new
-  end
-
-  def create
-  end
-
-  def edit
-  end
-
-  def update
-  end
-
-  def destroy
-  end
+# Will add additional functionality to admin role****
+  # def new
+  # end
+  #
+  # def create
+  # end
+  #
+  # def edit
+  # end
+  #
+  # def update
+  # end
+  #
+  # def destroy
+  # end
 
   private
   def instructor_params
-    params.require(:instructor).permit(:firstname, :lastname, :type_of_yoga_practice, :city, :state, :photo_url, :description, :facebook_url, :email, :password, :password_confirmation)
+    params.require(:instructor).permit(:firstname, :lastname, :type_of_yoga_practice, :city, :state, :photo_url, :description, :facebook_url, :email)
   end
 
   def set_post

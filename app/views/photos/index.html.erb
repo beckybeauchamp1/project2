@@ -12,7 +12,11 @@
             <%= link_to 'Delete',  retreat_photo_path(@retreat, photo), class: "label label-default btn btn-primary", role: "button", rel: "tooltip", :confirm => 'Are you sure?', :method => :delete%>
           </p>
         </div>
-        <img class= "img-responsive" src="<%=photo.photo_url%>" alt="...">
+        <%if photo.photo_url?%>
+        <%= image_tag(photo.photo_url)%>
+        <%else%>
+        <%= image_tag(photo.image)%>
+        <%end%>
       </div>
     </div>
     <%end%>

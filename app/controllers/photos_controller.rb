@@ -1,4 +1,7 @@
 class PhotosController < ApplicationController
+  before_action :set_post, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!
+
   def index
     @retreat = Retreat.find(params[:retreat_id])
     @photos = @retreat.photos
@@ -26,7 +29,6 @@ class PhotosController < ApplicationController
   end
 
   def update
-    @photo = Photo.find(params[:id])
     @photo.update(photo_params)
     redirect_to retreat_photos_path(@retreat), notice:
     "Thanks, #{current_user.firstname} for updating this photo!"
@@ -34,14 +36,17 @@ class PhotosController < ApplicationController
 
   def destroy
     @retreat = Retreat.find(params[:retreat_id])
-    @photo = Photo.find(params[:id])
     @photo.destroy
     redirect_to retreat_photos_path(@retreat)
   end
 
   private
   def photo_params
-    params.require(:photo).permit(:title, :description, :photo_url)
+    params.require(:photo).permit(:title, :description, :photo_url, :image)
+  end
+
+  def set_post
+   @photo = Photo.find(params[:id])
   end
 
 end

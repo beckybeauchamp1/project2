@@ -8,7 +8,7 @@
     <p>Location: <%=@instructor.city%>, <%=@instructor.state%></p>
     <% @retreats.each do |retreat|%>
     <h3>Upcoming Retreat:</h3>
-    <a href ="<%= retreat_photos_path(retreat)%>"><img class= "img-responsive" src="<%=retreat.photos.first.photo_url%>" alt="..."></a>
+    <a href ="<%= retreat_path(retreat)%>"><img class= "img-responsive" src="<%=retreat.photos.first.photo_url%>" alt="..."></a>
     <%end%>
   </div>
 </div>

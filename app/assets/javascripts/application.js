@@ -19,25 +19,18 @@
 
 $(document).ready(function() {
 
-  function showInstructorPhotoDescription(){
-    $(".col-md-6").mouseover(function(){
-      $(this).find(".show-description").slideDown(250);
+  function showDescription (div1, div2) {
+    $(div1).mouseover(function(){
+      var self = this;
+      $(self).find(div2).slideDown(250);
     });
-    $(".col-md-6").mouseleave(function(){
-      $(this).find(".show-description").slideUp(250);
-    });
-  }
-
-  function showPhotoDescription (){
-    $(".thumbnail").mouseover(function(){
-        $(this).find('#photocaption').slideDown(250);
-      });
-    $(".thumbnail").mouseleave(function(){
-          $(this).find('#photocaption').slideUp(250);
+    $(div1).mouseleave(function(){
+      var self = this;
+      $(self).find(div2).slideUp(250);
     });
   }
 
-  showInstructorPhotoDescription();
-  showPhotoDescription();
+showDescription(".col-md-6", ".show-description");
+showDescription(".thumbnail", "#photocaption")
 
 });
