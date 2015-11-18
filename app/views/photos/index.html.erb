@@ -1,20 +1,20 @@
 <div class="container">
   <div class="row">
-    <h2 class="page-header">Photo Gallery</h2>
+    <h2 class="page-header">Photo Gallery <%= link_to '<i class="fa fa-plus"></i>'.html_safe, new_retreat_photo_path(@retreat)%></h2>
     <%@photos.each do |photo|%>
     <div class="col-md-3">
       <div class="thumbnail" id="photothumbnail">
-          <div class="caption" id = "photocaption">
-            <h4><%=photo.title%></h4>
-            <p><%=photo.description.truncate_words(5)%></p>
-            <p>
-            <%=link_to "Edit", edit_retreat_photo_path(photo, @retreat), class: "label label-default", rel: "tooltip", title:"Edit"%>
-            <%=link_to "Delete", class: "label label-default", rel: "tooltip", title:"Edit"%>
-           </p>
-          </div>
-            <img class= "img-responsive" src="<%=photo.photo_url%>" alt="...">
+        <div class="caption" id = "photocaption">
+          <h4><%=photo.title%></h4>
+          <p><%=photo.description.truncate_words(5)%></p>
+          <p>
+            <%=link_to "Edit", edit_retreat_photo_path(@retreat, photo), class: "label label-default", rel: "tooltip", title:"Edit"%>
+            <%= link_to 'Delete',  retreat_photo_path(@retreat, photo), class: "label label-default btn btn-primary", role: "button", rel: "tooltip", :confirm => 'Are you sure?', :method => :delete%>
+          </p>
+        </div>
+        <img class= "img-responsive" src="<%=photo.photo_url%>" alt="...">
       </div>
-     </div>
-     <%end%>
-   </div>
+    </div>
+    <%end%>
+  </div>
 </div>

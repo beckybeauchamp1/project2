@@ -17,11 +17,14 @@
 //= require turbolinks
 //= require_tree .
 
-$( document ).ready(function() {
+$(document).ready(function() {
 
   function showInstructorPhotoDescription(){
-    $(".col-md-6").on('click', function(){
-      $(".aboutinstructor").toggle();
+    $(".col-md-6").mouseover(function(){
+      $(this).find(".show-description").slideDown(250);
+    });
+    $(".col-md-6").mouseleave(function(){
+      $(this).find(".show-description").slideUp(250);
     });
   }
 

@@ -1,10 +1,11 @@
+<%= link_to '<i class="fa fa-arrow-left"></i>'.html_safe, :back%>
 <%= form_for [@retreat, @photo], :html => { :class =>
-'form-new-retreat' } do |f| %>
-<%= f.label :title %>
-<%= f.text_field :title %>
-<%= f.label :photo_url %>
-<%= f.text_field :photo_url %>
-<%= f.label :description %>
-<%= f.text_area :description, class: "form-control", rows:"10" %>
-<%= f.submit%>
-<% end %>
+  'form-new-retreat' } do |f| %>
+  <%= f.label :title %>
+  <%= f.text_field :title %>
+  <%= f.label :photo_url %>
+  <%= f.text_field :photo_url %>
+  <%= f.label :description %>
+  <%= f.text_area :description, class: "form-control", rows:"10" %>
+  <%= f.submit%>
+  <% end %>

@@ -17,7 +17,7 @@ class RetreatsController < ApplicationController
   end
 
   def create
-    @retreat = Retreat.create(retreat_params)
+    @retreat = Retreat.create(retreat_params.merge(user:current_user))
     redirect_to retreats_path, notice:
     "Congrats, #{current_user.firstname} you've just started a new retreat!"
   end
@@ -32,6 +32,8 @@ class RetreatsController < ApplicationController
   end
 
   def destroy
+    @retreat.destroy
+    redirect_to retreats_path
   end
 
   private

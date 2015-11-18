@@ -7,7 +7,7 @@ class InstructorsController < ApplicationController
   end
 
   def show
-    
+    @retreats = @instructor.retreats
   end
 
   def new

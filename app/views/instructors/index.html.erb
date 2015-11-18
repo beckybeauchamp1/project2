@@ -1,11 +1,10 @@
 <div class="row">
   <h2>Featured Instructors:</h2>
   <% @instructors.each do |instructor| %>
-  <div class="col-md-6" id="instructor">
-    <p><%=instructor.firstname%> <%=instructor.lastname%></p>
-
-    <div class ="show-description">
-      <%=link_to "About Me", instructor_path(instructor), class: "aboutinstructor"%>
+  <div class="col-md-6 <%=instructor.lastname%>">
+    <div class = "show-description">
+      <p><%=instructor.firstname%> <%=instructor.lastname%></p>
+      <%=link_to "About Me", instructor_path(instructor), class: "btn btn-primary", role: "button"%>
     </div>
   </div>
   <%end%>
