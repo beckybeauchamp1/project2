@@ -3,6 +3,11 @@
   <div class="col-md-8 col-md-offset-2" id="retreats">
     <%=link_to "Edit", edit_retreat_path(@retreat), class: "btn btn-primary", role: "button"%>
     <%=link_to "Photos", retreat_photos_path(@retreat, @photos), class: "btn btn-primary", role: "button"%>
+    <%if Registration.find_by(user: current_user, retreat: @retreat)%>
+      <%=link_to "Registered",  users_registered_retreats_path,  class: "btn btn-danger", role: "button"%>
+    <%else%>
+      <%=link_to "Register", add_registation_retreat_path(@retreat), class: "btn btn-primary", role: "button", :method => :post%>
+    <%end%>
     <p><%=@retreat.description%></p>
     <p><%=@retreat.address%></p>
 

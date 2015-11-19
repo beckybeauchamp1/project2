@@ -30,7 +30,21 @@ $(document).ready(function() {
     });
   }
 
+function showDescriptionRetreats () {
+  $(".col-md-4").mouseover(function(){
+    var self = this;
+    $(self).find(".hidephoto").slideDown(200);
+    $(self).find(".caption").css("color", "transparent");
+  });
+  $(".col-md-4").mouseleave(function(){
+    var self = this;
+    $(self).find(".hidephoto").slideUp(200);
+    $(self).find(".caption").css("color", "black");
+  });
+}
+
 showDescription(".col-md-6", ".show-description");
-showDescription(".thumbnail", "#photocaption")
+showDescription(".thumbnail", "#photocaption");
+showDescriptionRetreats();
 
 });

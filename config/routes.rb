@@ -6,9 +6,22 @@ resources :instructors
 resources :retreats do
   resources :photos
 end
+
 resources :retreats do
   resources :comments
 end
+
+resources :retreats do
+  member do
+    post 'add_registation'
+    delete 'remove_registration'
+  end
+end
+
+get '/users/registered_retreats' => "registrations#index"
+
+resources :registrations
+
 
 root to: "home#index"
 
