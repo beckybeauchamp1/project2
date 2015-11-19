@@ -1,8 +1,6 @@
 == README
 
-Technologies Used:
-
-*Ruby, Rails, PostgreSQL, Javascript, Jquery, CSS, HTML5
+Technologies Used: Ruby, Rails, PostgreSQL, Javascript, Jquery, CSS, HTML5
 
 
 Wire Frames: https://drive.google.com/file/d/0B6Gi-JXl75E9QWxCU0p1eEc1SE0/view?usp=sharing
