@@ -2,6 +2,8 @@ source 'https://rubygems.org'
 
 gem "carrierwave"
 
+gem 'cancancan', '~> 1.10'
+
 gem 'fog'
 
 gem 'figaro'

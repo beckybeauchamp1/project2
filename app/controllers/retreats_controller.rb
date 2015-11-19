@@ -15,25 +15,30 @@ class RetreatsController < ApplicationController
 
   def new
     @retreat = Retreat.new
+    authorize! :create, @retreat
   end
 
   def create
-    @retreat = Retreat.create(retreat_params.merge(user:current_user))
+    @retreat = Retreat.create(retreat_params.merge(user: current_user))
+    authorize! :create, @retreat
     redirect_to retreats_path, notice:
     "Congrats, #{current_user.firstname} you've just started a new retreat!"
   end
 
   def edit
+    authorize! :update, @retreat
   end
 
   def update
     @retreat.update(retreat_params)
+    authorize! :update, @retreat
     redirect_to retreat_path(@retreat),
       notice: "Thanks, #{current_user.firstname} for updating your retreat info!"
   end
 
   def destroy
     @retreat.destroy
+    authorize! :destroy, @retreat
     redirect_to retreats_path
   end
 
