@@ -1,6 +1,6 @@
 == README
 
-Technologies Used: Ruby, Rails, PostgreSQL, Javascript, Jquery, CSS, HTML5
+Technologies: Ruby, Rails, PostgreSQL, Javascript, Jquery, CSS, HTML5
 
 
 Wire Frames: https://drive.google.com/file/d/0B6Gi-JXl75E9QWxCU0p1eEc1SE0/view?usp=sharing
@@ -37,6 +37,3 @@ User Stories:
 * As a user, I should be able to search for recent retreats.
 
 
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
