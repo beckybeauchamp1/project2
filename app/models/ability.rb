@@ -6,12 +6,9 @@ class Ability
 
     if user
       can :create, Retreat
-      if user.admin
-        can :manage, All
-      end
     end
 
-    can [:update, :destroy], [Retreat, Comment] :user => user
+    can [:update, :destroy], [Retreat, Comment], :user => user
 
   end
 end
