@@ -18,7 +18,7 @@
 
 body {
   padding-top: 5px;
-  font-size: 20px;
+  font-size: 15px;
   color: white;
   background-color: black;
   font-family: "Quicksand";
@@ -30,7 +30,7 @@ div.jumbotron{
   padding-bottom: 600px;
   background-size: cover;
   text-align: center;
-  font-size: 30px;
+  font-size: 25px;
 }
 nav{
   margin-top: 60px;
@@ -39,7 +39,7 @@ nav{
 }
 .nav li{
   padding-left: 20px;
-  font-size: 18px;
+  font-size: 15px;
 }
 .mainpage{
   margin: 0 auto;
@@ -51,7 +51,7 @@ nav{
   text-align: center;
   margin-top: 100px;
   background-color: rgba(44, 44, 44, 0.25);
-  font-size: 60px;
+  font-size: 40px;
 }
 div.row {
   color: white;
@@ -125,13 +125,13 @@ div.show-description {
   height: 80%;
 }
 .show-description p {
-  font-size: 50px;
+  font-size: 40px;
 }
 a{
   color: white;
 }
 h1{
-  font-size: 100px;
+  font-size: 80px;
 }
 h2{
   text-align: center;
@@ -165,7 +165,7 @@ div.col-md-4 .caption {
   height: 275px;
 }
 #newretreatlink {
-  font-size: 25px;
+  font-size: 20px;
 }
 .media {
   background-color: rgba(0, 0, 0, 0.1);
@@ -188,18 +188,18 @@ div.col-md-4 .caption {
   margin: 0 auto;
   background-color: rgba(0, 0, 0, 0.9);
   height: 900px;
-  font-size: 20px;
+  font-size: 18px;
 }
 .field {
   margin-top: 10px;
 }
 .field.link {
-  font-size: 26px;
+  font-size: 23px;
   margin-top: 30px;
 }
 .field input{
   color: black;
-  font-size: 20px;
+  font-size: 18px;
 }
 #file_field{
 
@@ -207,11 +207,11 @@ div.col-md-4 .caption {
 .actions {
   margin-top: 30px;
   color: black;
-  font-size: 28px;
+  font-size: 25px;
 }
 .form-new-retreat{
   margin: 0 auto;
-  font-size: 23px;
+  font-size: 20px;
   font-weight: bold;
   text-align: center;
   background-color: rgba(0, 0, 0, 0.9);
@@ -226,12 +226,12 @@ div.col-md-4 .caption {
 .form-control{
   width: 600px;
   margin: 0 auto;
-  font-size: 23px;
+  font-size: 20px;
   font-weight: bold;
 }
 .form-new-comment{
   margin: 0 auto;
-  font-size: 15px;
+  font-size: 14px;
   font-weight: bold;
   margin-top: 5px;
   display: block;
@@ -243,7 +243,7 @@ div.col-md-4 .caption {
 }
 input#comment_text{
   color: black;
-  font-size: 25px;
+  font-size: 22px;
   width: 50%;
 }
 .alert-error {
@@ -260,7 +260,7 @@ input#comment_text{
   background-color: red;
 }
 .home {
-  font-size: 40px;
+  font-size: 35px;
 }
 
 .thumbnail {
@@ -285,14 +285,14 @@ input#comment_text{
   margin: 0 auto;
   padding-top: 220px;
   text-align: center;
-  font-size: 90px;
+  font-size: 80px;
 }
 .fa:hover {
   background-color: rgba(0, 0, 0, 0.3);
 }
 footer {
   margin-top: 200px;
-  font-size: 60px;
+  font-size: 50px;
   list-style-type: none;
   display: inline;
 }
