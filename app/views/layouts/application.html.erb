@@ -21,7 +21,7 @@
     <form class="navbar-form navbar-right" role="search">
      <%= form_tag retreats_path, method: :get do %>
         <%= text_field_tag :query, params[:query], :class => "search-box" %>
-        <%= submit_tag "Submit", name: nil, :class => "btn btn-search" %>
+        <%= submit_tag "Search", name: nil, :class => "btn btn-search" %>
     <% end %>
   </form>
   <nav>
