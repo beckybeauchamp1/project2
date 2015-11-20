@@ -1,6 +1,6 @@
-class CreateRegistrations < ActiveRecord::Migration
+class CreateAttendances < ActiveRecord::Migration
   def change
-    create_table :registrations do |t|
+    create_table :attendances do |t|
       t.references :user, index: true, foreign_key: true
       t.references :retreat, index: true, foreign_key: true
       t.timestamps null: false

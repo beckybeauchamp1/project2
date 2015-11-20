@@ -2,6 +2,8 @@ source 'https://rubygems.org'
 
 gem "carrierwave"
 
+gem "pg_search"
+
 gem 'cancancan', '~> 1.10'
 
 gem 'fog'

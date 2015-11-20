@@ -326,10 +326,10 @@ input file{
   text-align: center;
   margin: 0 auto;
 }
-#registrationscontainer {
+#attendancescontainer {
   height: 350px;
 }
-#registrationscontainer h3 {
+#attendancescontainer h3 {
   background-color: rgba(0, 0, 0, 0.9);
 }
 .registrations{
@@ -340,4 +340,8 @@ input file{
   width: 100%;
   height: 135px;
   display: none;
+}
+
+.search-box{
+  color: black;
 }

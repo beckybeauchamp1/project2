@@ -10,7 +10,7 @@ class RetreatsController < ApplicationController
     @retreat = Retreat.find(params[:id])
     @comments = Comment.all
     @comment = Comment.new
-    @registrations = @retreat.registrations
+    @attendances = @retreat.attendances
   end
 
   def new
@@ -42,17 +42,17 @@ class RetreatsController < ApplicationController
     redirect_to retreats_path
   end
 
-  def add_registation
+  def add_attendance
     @retreat = Retreat.find(params[:id])
     @instructor = @retreat.instructor
-    @retreat.registrations.create!(user: current_user)
+    @retreat.attendances.create!(user: current_user)
     redirect_to retreat_path(@retreat),
     notice: "Thanks for signing up #{current_user.firstname}, please contact #{@instructor.firstname} #{@instructor.lastname} for more details!"
   end
 
-  def remove_registation
+  def remove_attendance
     @retreat = Retreat.find(params[:id])
-    @retreat.registrations.destroy
+    @retreat.attendances.destroy
     redirect_to retreat_path(@retreat)
   end
 

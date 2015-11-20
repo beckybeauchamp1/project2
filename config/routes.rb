@@ -13,15 +13,14 @@ end
 
 resources :retreats do
   member do
-    post 'add_registation'
-    delete 'remove_registration'
+    post 'add_attendance'
+    delete 'remove_attendance'
   end
 end
 
-get '/users/registered_retreats' => "registrations#index"
+get '/users/registered_retreats' => "attendances#index"
 
-resources :registrations
-
+resources :attendances
 
 root to: "home#index"
 

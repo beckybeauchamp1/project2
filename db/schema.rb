@@ -11,10 +11,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151118223810) do
+ActiveRecord::Schema.define(version: 20151120004348) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "attendances", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "retreat_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "attendances", ["retreat_id"], name: "index_attendances_on_retreat_id", using: :btree
+  add_index "attendances", ["user_id"], name: "index_attendances_on_user_id", using: :btree
 
   create_table "comments", force: :cascade do |t|
     t.string  "text"
@@ -34,10 +44,20 @@ ActiveRecord::Schema.define(version: 20151118223810) do
     t.string   "photo_url"
     t.string   "description"
     t.string   "facebook_url"
-    t.string   "email",                 default: "", null: false
-    t.datetime "created_at",                         null: false
-    t.datetime "updated_at",                         null: false
+    t.string   "email"
+    t.datetime "created_at",            null: false
+    t.datetime "updated_at",            null: false
   end
+
+  create_table "pg_search_documents", force: :cascade do |t|
+    t.text     "content"
+    t.integer  "searchable_id"
+    t.string   "searchable_type"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+  end
+
+  add_index "pg_search_documents", ["searchable_type", "searchable_id"], name: "index_pg_search_documents_on_searchable_type_and_searchable_id", using: :btree
 
   create_table "photos", force: :cascade do |t|
     t.string   "title"
@@ -50,16 +70,6 @@ ActiveRecord::Schema.define(version: 20151118223810) do
   end
 
   add_index "photos", ["retreat_id"], name: "index_photos_on_retreat_id", using: :btree
-
-  create_table "registrations", force: :cascade do |t|
-    t.integer  "user_id"
-    t.integer  "retreat_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  add_index "registrations", ["retreat_id"], name: "index_registrations_on_retreat_id", using: :btree
-  add_index "registrations", ["user_id"], name: "index_registrations_on_user_id", using: :btree
 
   create_table "retreats", force: :cascade do |t|
     t.string  "title"
@@ -102,11 +112,11 @@ ActiveRecord::Schema.define(version: 20151118223810) do
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
+  add_foreign_key "attendances", "retreats"
+  add_foreign_key "attendances", "users"
   add_foreign_key "comments", "retreats"
   add_foreign_key "comments", "users"
   add_foreign_key "photos", "retreats"
-  add_foreign_key "registrations", "retreats"
-  add_foreign_key "registrations", "users"
   add_foreign_key "retreats", "instructors"
   add_foreign_key "retreats", "users"
 end

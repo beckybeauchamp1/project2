@@ -1,15 +1,14 @@
-class RegistrationsController < ApplicationController
+class AttendancesController < ApplicationController
   before_action :authenticate_user!
 
   def index
     @registered_retreats = current_user.registered_retreats
-    @registrations = current_user.registrations
+    @attendances = current_user.attendances
   end
 
   def destroy
-    @registration = Registration.find(params[:id])
-    @registration.destroy
+    @attendance = Attendance.find(params[:id])
+    @attendance.destroy
     redirect_to users_registered_retreats_path
   end
-
 end
