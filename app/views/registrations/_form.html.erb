@@ -1,0 +1,13 @@
+<h2>Sign Up</h2>
+<%= link_to '<i class="fa fa-arrow-left"></i>'.html_safe, :back%>
+  <p><%retreat.title%></p>
+  <p><%retreat.address%></p>
+  <p><%retreat.instructor%></p>
+  <p>$<%retreat.price%></p>
+  <p><%retreat.start_date%> -> <%retreat.end_date%></p>
+  <p><%retreat.description%></p>
+
+<%= form_for [@retreat, @attendance], :html => { :class =>
+  'form-new-retreat' } do |f| %>
+  <%= f.submit%>
+  <% end %>
