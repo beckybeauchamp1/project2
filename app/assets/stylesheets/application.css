@@ -175,9 +175,10 @@ div.col-md-4 .caption {
   color: black;
   background-color: rgba(255, 255, 255, 0.6);
   box-shadow: 10px 10px 5px #888888;
-  border: 1px solid white;
   width: 80%;
   text-align: left;
+  margin-top: 10px;
+  height: 120px;
   display: block;
 }
 .media-left {
@@ -341,7 +342,22 @@ input file{
   height: 135px;
   display: none;
 }
-
 .search-box{
   color: black;
+}
+input#user_avatar{
+  margin: 0 auto;
+  text-align: left;
+  background-color: white;
+  font-weight: bold;
+  padding-top: 5px;
+  font-size: 18px;
+}
+input#photo_image{
+  background-color: white;
+  font-weight: bold;
+  color:black;
+  text-align: center;
+  margin: 0 auto;
+  height: 40px;
 }

@@ -24,8 +24,7 @@
             <%= image_tag current_user.avatar.url, class: "media-object" %>
           </div>
           <div class="media-body">
-            <h4 class="media-heading"><%=comment.user.firstname%>, <%=comment.user.lastname%></h4>
-            <p><%=comment.created_at%></p>
+            <h4 class="media-heading"><%=comment.user.firstname%> <%=comment.user.lastname%>, <%=comment.created_at%></h4>
             <p><%=comment.text%><p>
               <%= link_to 'Delete', retreat_comment_path(@retreat, comment),:confirm => 'Are you sure?', :method => :delete,class: "btn btn-danger", type: "button"%>
             </div>
