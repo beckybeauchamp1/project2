@@ -16,6 +16,7 @@
     <p><strong>Cost: </strong><%=r.retreat.cost%></p>
   <%end%>
   <p><strong>Address: </strong><%=r.retreat.address%></p>
+  
     <%= form_for (r), method: "delete", :html => {:class =>'form-delete-attendance'}  do |f| %>
     <%= f.submit "Unregister?", class: "delete" %>
     <%end%>
