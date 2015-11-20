@@ -1,6 +1,7 @@
 class AttendancesController < ApplicationController
   before_action :authenticate_user!
 
+
   def index
     @registered_retreats = current_user.registered_retreats
     @attendances = current_user.attendances

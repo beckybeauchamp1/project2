@@ -6,27 +6,27 @@
     <%if Attendance.find_by(user: current_user, retreat: @retreat)%>
       <%=link_to "Registered",  users_registered_retreats_path,  class: "btn btn-danger", role: "button"%>
     <%else%>
-      <%=link_to "Register", add_registation_retreat_path(@retreat), class: "btn btn-primary", role: "button", :method => :post%>
+      <%=link_to "Register", add_attendance_retreat_path(@retreat), class: "btn btn-primary", role: "button", :method => :post%>
     <%end%>
     <p><%=@retreat.description%></p>
     <p><%=@retreat.address%></p>
 
     <div class="media">
-      <h3>Please leave a comment <i class="fa fa-commenting-o"></i></h3>
       <%= form_for [@retreat, @comment], :html => { :class =>
-        'form-new-comment' } do |f| %>
+        'form-new-comment', :class =>"text-left" } do |f| %>
+        <i class="fa fa-user"></i>
         <%= f.text_field :text %>
         <%= f.submit :html => { :class =>
-          'btn btn-primary'}, role: "button"%>
+          'btn btn-default', :class =>'submitcommentbutton'}, role: "button"%>
           <% end %>
           <%@comments.each do |comment|%>
           <div class="media-left">
-            <img class="media-object" src="<%=comment.user.photo_url%>" alt="...">
+            <%= image_tag current_user.avatar.url, class: "media-object" %>
           </div>
           <div class="media-body">
             <h4 class="media-heading"><%=comment.user.firstname%>, <%=comment.user.lastname%></h4>
+            <p><%=comment.created_at%></p>
             <p><%=comment.text%><p>
-              <%= link_to 'Edit', retreat_comment_path(@retreat, comment),:confirm => 'Are you sure?', :method => :delete, class: "btn btn-default", type: "button" %>
               <%= link_to 'Delete', retreat_comment_path(@retreat, comment),:confirm => 'Are you sure?', :method => :delete,class: "btn btn-danger", type: "button"%>
             </div>
             <%end%>

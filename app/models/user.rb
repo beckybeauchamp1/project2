@@ -6,6 +6,7 @@ class User < ActiveRecord::Base
    has_many :retreats
    has_many :instructors, through: :retreats
    has_many :attendances
+   has_many :photos, through: :retreats
    has_many :registered_retreats, through: :attendances, source: :retreat, class_name: "Retreat"
-   mount_uploader:image, ImageUploader
+   mount_uploader :avatar, AvatarUploader
 end

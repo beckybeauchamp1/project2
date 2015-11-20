@@ -9,13 +9,13 @@ class Retreat < ActiveRecord::Base
 
 
   include PgSearch
-   multisearchable :against => [:title, :address, :description, :cost, :start_date, :end_date]
+   multisearchable :against => [:title, :address, :description]
 
    def self.text_search(query)
      if query.present?
-       where("title @@ :q or address @@ :q, description @@ :q", q: query)
+       search(query)
      else
-       Retreat.none
+       all
      end
    end
 end

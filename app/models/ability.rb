@@ -5,10 +5,11 @@ class Ability
     can :read, :all
 
     if user
-      can :create, Retreat
+      can :create, [Retreat, Comment, Photo]
     end
 
-    can [:update, :destroy], [Retreat, Comment], :user => user
+
+    can [:update, :destroy], [Retreat, Comment, Photo], :user => user
 
   end
 end

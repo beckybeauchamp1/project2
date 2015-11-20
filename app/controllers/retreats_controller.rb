@@ -3,7 +3,7 @@ class RetreatsController < ApplicationController
   before_action :authenticate_user!
 
   def index
-    @retreats = Retreat.all
+    @retreats = Retreat.text_search(params[:query])
   end
 
   def show
@@ -37,9 +37,15 @@ class RetreatsController < ApplicationController
   end
 
   def destroy
+    @retreat.photos.destroy_all
+    @retreat.attendances.destroy_all
     @retreat.destroy
     authorize! :destroy, @retreat
     redirect_to retreats_path
+  end
+
+  def search
+    @retreats = Retreat.search_name(params[:query])
   end
 
   def add_attendance
@@ -47,7 +53,8 @@ class RetreatsController < ApplicationController
     @instructor = @retreat.instructor
     @retreat.attendances.create!(user: current_user)
     redirect_to retreat_path(@retreat),
-    notice: "Thanks for signing up #{current_user.firstname}, please contact #{@instructor.firstname} #{@instructor.lastname} for more details!"
+      notice:
+        "Thanks for signing up #{current_user.firstname}, please contact stay tuned for more details!"
   end
 
   def remove_attendance

@@ -10,10 +10,12 @@ class ApplicationController < ActionController::Base
   def configure_permitted_parameters
     devise_parameter_sanitizer.for(:sign_up) << :firstname
     devise_parameter_sanitizer.for(:sign_up) << :lastname
-    devise_parameter_sanitizer.for(:sign_up) << :image
+    devise_parameter_sanitizer.for(:sign_up) << :avatar
+    devise_parameter_sanitizer.for(:sign_up) << :avatar_cache
     devise_parameter_sanitizer.for(:account_update) << :firstname
     devise_parameter_sanitizer.for(:account_update) << :lastname
-    devise_parameter_sanitizer.for(:account_update) << :image
+    devise_parameter_sanitizer.for(:sign_up) << :avatar
+    devise_parameter_sanitizer.for(:sign_up) << :avatar_cache
   end
 
   rescue_from CanCan::AccessDenied do |exception|

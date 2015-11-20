@@ -1,9 +1,9 @@
 class InstructorsController < ApplicationController
-  before_action :set_post, only: [:show, :edit, :update, :destroy]
+  before_action :set_instructor, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
 
   def index
-    @instructors = Instructor.all
+    @instructors= Instructor.text_search(params[:query])
   end
 
   def show
@@ -31,7 +31,7 @@ class InstructorsController < ApplicationController
     params.require(:instructor).permit(:firstname, :lastname, :type_of_yoga_practice, :city, :state, :photo_url, :description, :facebook_url, :email)
   end
 
-  def set_post
+  def set_instructor
    @instructor = Instructor.find(params[:id])
   end
 

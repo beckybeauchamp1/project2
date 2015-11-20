@@ -5,4 +5,12 @@ class Instructor < ActiveRecord::Base
   include PgSearch
   multisearchable :against => [:firstname, :lastname, :city, :state, :type_of_yoga_practice]
 
+   def self.text_search(query)
+     if query.present?
+       search(query)
+     else
+       all
+     end
+   end
+
 end

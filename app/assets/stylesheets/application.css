@@ -233,18 +233,18 @@ div.col-md-4 .caption {
   margin: 0 auto;
   font-size: 15px;
   font-weight: bold;
-  text-align: center;
   margin-top: 5px;
   display: block;
 }
 .form-new-comment input {
-  display: block;
+  display: inline;
   margin: 0 auto;
   margin-top: 5px;
 }
 input#comment_text{
   color: black;
   font-size: 25px;
+  width: 50%;
 }
 .alert-error {
   margin: 0 auto;
@@ -332,7 +332,7 @@ input file{
 #attendancescontainer h3 {
   background-color: rgba(0, 0, 0, 0.9);
 }
-.registrations{
+.attendances{
   box-shadow: 10px 5px 5px black;
   background-color: rgba(0, 0, 0, 0.8);
 }

@@ -11,10 +11,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151120004348) do
+ActiveRecord::Schema.define(version: 20151120044649) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+  enable_extension "pg_trgm"
+  enable_extension "fuzzystrmatch"
 
   create_table "attendances", force: :cascade do |t|
     t.integer  "user_id"
@@ -27,9 +29,11 @@ ActiveRecord::Schema.define(version: 20151120004348) do
   add_index "attendances", ["user_id"], name: "index_attendances_on_user_id", using: :btree
 
   create_table "comments", force: :cascade do |t|
-    t.string  "text"
-    t.integer "retreat_id"
-    t.integer "user_id"
+    t.string   "text"
+    t.integer  "retreat_id"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   add_index "comments", ["retreat_id"], name: "index_comments_on_retreat_id", using: :btree
@@ -67,9 +71,11 @@ ActiveRecord::Schema.define(version: 20151120004348) do
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
     t.string   "image"
+    t.integer  "user_id"
   end
 
   add_index "photos", ["retreat_id"], name: "index_photos_on_retreat_id", using: :btree
+  add_index "photos", ["user_id"], name: "index_photos_on_user_id", using: :btree
 
   create_table "retreats", force: :cascade do |t|
     t.string  "title"
@@ -107,6 +113,7 @@ ActiveRecord::Schema.define(version: 20151120004348) do
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
     t.string   "image"
+    t.string   "avatar"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
@@ -117,6 +124,7 @@ ActiveRecord::Schema.define(version: 20151120004348) do
   add_foreign_key "comments", "retreats"
   add_foreign_key "comments", "users"
   add_foreign_key "photos", "retreats"
+  add_foreign_key "photos", "users"
   add_foreign_key "retreats", "instructors"
   add_foreign_key "retreats", "users"
 end
