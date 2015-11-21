@@ -8,7 +8,6 @@ class Ability
       can :create, [Retreat, Comment, Photo]
     end
 
-
     can [:update, :destroy], [Retreat, Comment, Photo], :user => user
 
   end

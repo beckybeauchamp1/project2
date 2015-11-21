@@ -9,8 +9,10 @@ class RetreatsController < ApplicationController
   def show
     @retreat = Retreat.find(params[:id])
     @comments = Comment.all
+    @instructor = @retreat.instructor
     @comment = Comment.new
     @attendances = @retreat.attendances
+    can? :update, @retreat
   end
 
   def new
@@ -53,7 +55,7 @@ class RetreatsController < ApplicationController
     @instructor = @retreat.instructor
     @retreat.attendances.create!(user: current_user)
     redirect_to retreat_path(@retreat),
-      notice:"Thanks for signing up #{current_user.firstname}, please contact stay tuned for more details!"
+      notice: "Thanks for signing up #{current_user.firstname}, please contact stay tuned for more details!"
   end
 
   def remove_attendance
@@ -68,7 +70,7 @@ class RetreatsController < ApplicationController
   end
 
   def set_retreat
-   @retreat = Retreat.find(params[:id])
+    @retreat = Retreat.find(params[:id])
   end
 
 end

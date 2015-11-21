@@ -1,7 +1,11 @@
 <div class="row" id="retreatshowpage">
   <h2><%=@retreat.title%></h2>
   <div class="col-md-8 col-md-offset-2" id="retreats">
-    <%=link_to "Edit", edit_retreat_path(@retreat), class: "btn btn-primary", role: "button"%>
+    <%if can? :update, @retreat%>
+      <%=link_to "Edit", edit_retreat_path(@retreat), class: "btn btn-primary", role: "button"%>
+    <%else%>
+      <%=link_to "Instructor", instructor_path(@instructor, @retreat), class: "btn btn-primary", role: "button"%>
+    <%end%>
     <%=link_to "Photos", retreat_photos_path(@retreat, @photos), class: "btn btn-primary", role: "button"%>
     <%if Attendance.find_by(user: current_user, retreat: @retreat)%>
     <%=link_to "Registered",  users_registered_retreats_path,  class: "btn btn-danger", role: "button"%>
@@ -25,9 +29,9 @@
             <%= image_tag current_user.avatar.url, class: "media-object" %> <h4 class="media-heading">
           </div>
           <div class="media-body">
+            <%= link_to 'Delete', retreat_comment_path(@retreat, comment),:confirm => 'Are you sure?', :method => :delete, class: "btn btn-danger deletecommentbutton", type: "button"%>
               <h4><%=comment.user.firstname%> <%=comment.user.lastname%>, <%=comment.created_at%></h4>
               <p><%=comment.text%><p>
-                <%= link_to 'Delete', retreat_comment_path(@retreat, comment),:confirm => 'Are you sure?', :method => :delete, class: "btn btn-danger", type: "button"%>
           </div>
           <%end%>
     </div>

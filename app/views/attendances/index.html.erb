@@ -18,7 +18,7 @@
           <p><strong>Address: </strong><%=r.retreat.address%></p>
           <p><strong>Instructor: </strong><%=r.retreat.instructor.firstname%> <%=r.retreat.instructor.lastname%></p>
           <%= form_for (r), method: "delete", :html => {:class =>'form-delete-attendance'}  do |f| %>
-          <%= f.submit "Unregister?", class: "delete" %>
+          <%= f.submit "Cancel Reservation?", class: "delete" %>
           <%end%>
         </div>
       </div>

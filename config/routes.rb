@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-
+  
   root to: "home#index"
 
   get '/' => "home#index"
@@ -24,6 +24,8 @@ Rails.application.routes.draw do
   end
 
   resources :attendances
+
+  get '/users/registered_retreats' => "attendances#index"
 
 
   # The priority is based upon order of creation: first created -> highest priority.
