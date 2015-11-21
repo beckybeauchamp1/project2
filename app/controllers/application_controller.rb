@@ -8,14 +8,8 @@ class ApplicationController < ActionController::Base
   protected
 
   def configure_permitted_parameters
-    devise_parameter_sanitizer.for(:sign_up) << :firstname
-    devise_parameter_sanitizer.for(:sign_up) << :lastname
-    devise_parameter_sanitizer.for(:sign_up) << :avatar
-    devise_parameter_sanitizer.for(:sign_up) << :avatar_cache
-    devise_parameter_sanitizer.for(:account_update) << :firstname
-    devise_parameter_sanitizer.for(:account_update) << :lastname
-    devise_parameter_sanitizer.for(:sign_up) << :avatar
-    devise_parameter_sanitizer.for(:sign_up) << :avatar_cache
+    devise_parameter_sanitizer.for(:sign_up) { |u| u.permit(:firstname, :lastname, :avatar, :avatar_cache, :email, :password, :password_confirmation) }
+    devise_parameter_sanitizer.for(:account_update) { |u| u.permit(:firstname, :lastname, :avatar, :avatar_cache, :email, :password, :password_confirmation) }
   end
 
   rescue_from CanCan::AccessDenied do |exception|

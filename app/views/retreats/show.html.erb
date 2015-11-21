@@ -4,9 +4,9 @@
     <%=link_to "Edit", edit_retreat_path(@retreat), class: "btn btn-primary", role: "button"%>
     <%=link_to "Photos", retreat_photos_path(@retreat, @photos), class: "btn btn-primary", role: "button"%>
     <%if Attendance.find_by(user: current_user, retreat: @retreat)%>
-      <%=link_to "Registered",  users_registered_retreats_path,  class: "btn btn-danger", role: "button"%>
+    <%=link_to "Registered",  users_registered_retreats_path,  class: "btn btn-danger", role: "button"%>
     <%else%>
-      <%=link_to "Register", add_attendance_retreat_path(@retreat), class: "btn btn-primary", role: "button", :method => :post%>
+    <%=link_to "Register", add_attendance_retreat_path(@retreat), class: "btn btn-primary", role: "button", :method => :post%>
     <%end%>
     <p><%=@retreat.description%></p>
     <p><%=@retreat.address%></p>
@@ -18,18 +18,18 @@
         <%= f.text_field :text %>
         <%= f.submit :html => { :class =>
           'btn btn-default', :class =>'submitcommentbutton'}, role: "button"%>
-          <% end %>
+      <% end %>
+
           <%@comments.each do |comment|%>
           <div class="media-left">
-            <%= image_tag current_user.avatar.url, class: "media-object" %>
+            <%= image_tag current_user.avatar.url, class: "media-object" %> <h4 class="media-heading">
           </div>
           <div class="media-body">
-            <h4 class="media-heading"><%=comment.user.firstname%> <%=comment.user.lastname%>, <%=comment.created_at%></h4>
-            <p><%=comment.text%><p>
-              <%= link_to 'Delete', retreat_comment_path(@retreat, comment),:confirm => 'Are you sure?', :method => :delete,class: "btn btn-danger", type: "button"%>
-            </div>
-            <%end%>
+              <h4><%=comment.user.firstname%> <%=comment.user.lastname%>, <%=comment.created_at%></h4>
+              <p><%=comment.text%><p>
+                <%= link_to 'Delete', retreat_comment_path(@retreat, comment),:confirm => 'Are you sure?', :method => :delete, class: "btn btn-danger", type: "button"%>
           </div>
-
-        </div>
-      </div>
+          <%end%>
+    </div>
+  </div>
+</div>

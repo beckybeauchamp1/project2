@@ -53,8 +53,7 @@ class RetreatsController < ApplicationController
     @instructor = @retreat.instructor
     @retreat.attendances.create!(user: current_user)
     redirect_to retreat_path(@retreat),
-      notice:
-        "Thanks for signing up #{current_user.firstname}, please contact stay tuned for more details!"
+      notice:"Thanks for signing up #{current_user.firstname}, please contact stay tuned for more details!"
   end
 
   def remove_attendance

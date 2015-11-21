@@ -11,7 +11,7 @@ class CommentsController < ApplicationController
     @retreat = Retreat.find(params[:retreat_id])
     @retreat.comments.create!(comment_params.merge(user: current_user))
     redirect_to retreat_path(@retreat),
-      notice: "Thanks, #{current_user.firstname} for sharing!"
+    notice: "Thanks, #{current_user.firstname} for sharing!"
   end
 
   def update
