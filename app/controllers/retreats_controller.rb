@@ -1,6 +1,6 @@
 class RetreatsController < ApplicationController
   before_action :set_retreat, only: [:show, :edit, :update, :destroy]
-  before_action :authenticate_user!
+  before_action :authenticate_user!, only: [:show, :new, :create, :edit, :update, :destroy]
 
   def index
     @retreats = Retreat.text_search(params[:query])
@@ -12,7 +12,6 @@ class RetreatsController < ApplicationController
     @instructor = @retreat.instructor
     @comment = Comment.new
     @attendances = @retreat.attendances
-    can? :update, @retreat
   end
 
   def new
@@ -56,12 +55,6 @@ class RetreatsController < ApplicationController
     @retreat.attendances.create!(user: current_user)
     redirect_to retreat_path(@retreat),
       notice: "Thanks for signing up #{current_user.firstname}, please contact stay tuned for more details!"
-  end
-
-  def remove_attendance
-    @retreat = Retreat.find(params[:id])
-    @retreat.attendances.destroy
-    redirect_to retreat_path(@retreat)
   end
 
   private

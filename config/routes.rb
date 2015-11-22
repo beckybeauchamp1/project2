@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  
+
   root to: "home#index"
 
   get '/' => "home#index"
@@ -19,7 +19,6 @@ Rails.application.routes.draw do
   resources :retreats do
     member do
       post 'add_attendance'
-      delete 'remove_attendance'
     end
   end
 

@@ -2,8 +2,6 @@ source 'https://rubygems.org'
 
 gem "carrierwave"
 
-gem "pg_search"
-
 gem 'textacular', '~> 3.0'
 
 gem 'cancancan', '~> 1.10'
