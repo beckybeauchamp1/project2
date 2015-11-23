@@ -1,19 +1,19 @@
 source 'https://rubygems.org'
 
 gem "carrierwave"
-
+# This gem provides a simple and extremely flexible way to upload files from Ruby applications
 gem 'textacular', '~> 3.0'
-
+#Textacular exposes full text search capabilities from PostgreSQL, and allows you to declare full text indexes
 gem 'cancancan', '~> 1.10'
-
+#CanCanCan is an authorization library for Ruby on Rails which restricts what resources a given user is allowed to access.
 gem 'fog'
 
 gem 'figaro'
-
+#Figaro used to secure
 gem 'jquery-turbolinks'
-
+#Believe that rails 4 comes with turbolinks but I was having issues with my Jquery not working if the page was not refreshed
 gem "font-awesome-rails"
-
+#Font Awesome provides additional icons for my rails application
 gem 'bootstrap-sass','3.2.0.0'
 
 gem 'devise'

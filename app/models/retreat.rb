@@ -7,15 +7,11 @@ class Retreat < ActiveRecord::Base
   belongs_to :user
   has_many :users, through: :attendances
 
-
-  include PgSearch
-   multisearchable :against => [:title, :address, :description]
-
-   def self.text_search(query)
-     if query.present?
-       search(query)
-     else
-       all
-     end
-   end
+  def self.text_search(query)
+    if query.present?
+      search(query)
+    else
+      all
+    end
+  end
 end

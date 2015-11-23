@@ -15,40 +15,40 @@
   <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
 </head>
 <body>
-    <form class="navbar-form navbar-left" role="button">
+  <form class="navbar-form navbar-left" role="button">
     <a href = "/" class= "home"><i class="fa fa-hand-peace-o"></i></a>
-    </form>
-    <form class="navbar-form navbar-right" role="search">
-     <%= form_tag retreats_path, method: :get do %>
-        <%= text_field_tag :query, params[:query], :class => "search-box" %>
-        <%= submit_tag "Search", name: nil, :class => "btn btn-search" %>
+  </form>
+  <form class="navbar-form navbar-right" role="search">
+    <%= form_tag retreats_path, method: :get do %>
+    <%= text_field_tag :query, params[:query], :class => "search-box" %>
+    <%= submit_tag "Search", name: nil, :class => "btn btn-search" %>
     <% end %>
   </form>
   <nav>
-  <ul class="nav navbar-nav navbar-right">
-    <li><%= link_to "Lead a Retreat",new_retreat_path %></li>
-    <li><%= link_to "Instructors", instructors_path %></li>
-    <li><%= link_to "Retreats", retreats_path %></li>
-    <% if user_signed_in? %>
-        <li><%=link_to "Log Out", destroy_user_session_path, method: :delete, class: 'nav'%></li>
-        <li><%=link_to "Edit Profile", edit_user_registration_path, method: :get, class: 'nav'%></li>
-        <li><%=link_to "Registered Retreats", attendances_path, method: :get, class: 'nav'%></li>
+    <ul class="nav navbar-nav navbar-right">
+      <li><%= link_to "Lead a Retreat",new_retreat_path %></li>
+      <li><%= link_to "Instructors", instructors_path %></li>
+      <li><%= link_to "Retreats", retreats_path %></li>
+      <% if user_signed_in? %>
+      <li><%=link_to "Log Out", destroy_user_session_path, method: :delete, class: 'nav'%></li>
+      <li><%=link_to "Edit Profile", edit_user_registration_path, method: :get, class: 'nav'%></li>
+      <li><%=link_to "Registered Retreats", attendances_path, method: :get, class: 'nav'%></li>
       <% else %>
-        <li><%=link_to "Sign Up", user_session_path, method: :show, class: 'nav'%></li>
+      <li><%=link_to "Sign Up", user_session_path, method: :show, class: 'nav'%></li>
       <%end%>
-  </ul>
-</nav>
-<div class = "jumbotron">
-  <%= flash_messages %>
-<%= yield %>
-</div>
-<footer>
-  <ul>
-    <li><a href = "#"><i class="fa fa-facebook-official"></i></a></li>
-    <li><a href = "https://www.linkedin.com/in/beckybeauchamp"><i class="fa fa-linkedin-square"></i></a></li>
-    <li><a href = "https://github.com/beckybeauchamp1"><i class="fa fa-github-square"></i></a></li>
-    <li><a href = "#"><i class="fa fa-envelope-o"></i></a></li>
-</ul>
-</footer>
+    </ul>
+  </nav>
+  <div class = "jumbotron">
+    <%= flash_messages %>
+    <%= yield %>
+  </div>
+  <footer>
+    <ul>
+      <li><a href = "#"><i class="fa fa-facebook-official"></i></a></li>
+      <li><a href = "https://www.linkedin.com/in/beckybeauchamp"><i class="fa fa-linkedin-square"></i></a></li>
+      <li><a href = "https://github.com/beckybeauchamp1"><i class="fa fa-github-square"></i></a></li>
+      <li><a href = "#"><i class="fa fa-envelope-o"></i></a></li>
+    </ul>
+  </footer>
 </body>
 </html>

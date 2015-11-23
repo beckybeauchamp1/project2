@@ -9,6 +9,7 @@ class PhotosController < ApplicationController
   end
 
   def show
+
   end
 
   def new
@@ -19,8 +20,8 @@ class PhotosController < ApplicationController
   def create
     @retreat = Retreat.find(params[:retreat_id])
     @photo = @retreat.photos.create!(photo_params.merge(user: current_user))
-    redirect_to retreat_photos_path(@retreat), notice:
-    "#{current_user.firstname} you've sucessfully added a photo!"
+    redirect_to retreat_photos_path(@retreat),
+      notice:"#{current_user.firstname} you've sucessfully added a photo!"
   end
 
   def edit
@@ -29,8 +30,8 @@ class PhotosController < ApplicationController
 
   def update
     @photo.update(photo_params.merge(user: current_user))
-    redirect_to retreat_photos_path, notice:
-    "Thanks, #{current_user.firstname} for updating this photo!"
+    redirect_to retreat_photos_path,
+    notice:"Thanks, #{current_user.firstname} for updating this photo!"
   end
 
   def destroy

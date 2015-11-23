@@ -256,9 +256,6 @@ input#comment_text{
   text-align: center;
   font-size: 80px;
 }
-.fa.fa-arrow-left{
-  text-align: center;
-}
 .fa:hover {
   background-color: rgba(0, 0, 0, 0.3);
 }

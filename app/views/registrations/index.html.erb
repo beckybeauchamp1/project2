@@ -1,0 +1,26 @@
+<div class="container">
+<div class="row">
+<h2>Registered Retreats:</h2>
+<p>Current Retreats: <%=@registered_retreats.length%><p>
+<% @attendances.each do |r|%>
+<div class = "col-md-4 col-md-offset-4" id="attendancescontainer">
+  <h3><%=r.retreat.title%></h3>
+  <div class = "attendances">
+  <% if r.retreat.start_date || r.retreat.end_date %>
+    <p><strong>Dates:</strong> <%=r.retreat.start_date%> -> <%=r.retreat.end_date%></p>
+  <% else %>
+    <p><strong>Dates:</strong> TBD</p>
+    <p>Please check calendar for updates: <a href = "#"><i class="fa fa-calendar"></i></a></p>
+  <%end%>
+  <% if r.retreat.cost %>
+    <p><strong>Cost: </strong><%=r.retreat.cost%></p>
+  <%end%>
+  <p><strong>Address: </strong><%=r.retreat.address%></p>
+    <%= form_for (r), method: "delete", :html => {:class =>'form-delete-attendance'}  do |f| %>
+    <%= f.submit "Unregister?", class: "delete" %>
+    <%end%>
+  </div>
+  </div>
+  <%end%>
+</div>
+</div>
